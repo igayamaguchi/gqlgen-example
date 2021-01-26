@@ -1,0 +1,16 @@
+type Article {
+    id: ID!
+    title: String!
+    status: Status!
+}
+
+enum Status {
+    PUBLISHED
+    DRAFT
+    PRIVATE
+}
+
+type Query {
+    article(id: String!): Article
+    articles(status: Status!): [Article!]
+}
